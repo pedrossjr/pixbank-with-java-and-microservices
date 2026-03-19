@@ -1,3 +1,7 @@
 spring:
   application:
     name: account-service
+
+    springdoc:
+      swagger-ui:
+        path: /account-service/api
