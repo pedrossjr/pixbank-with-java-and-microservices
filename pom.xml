@@ -1,0 +1,23 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.github.pedrossjr</groupId>
+    <artifactId>payment-platform</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>common-lib</module>
+        <module>api-gateway</module>
+        <module>auth-service</module>
+        <module>payment-service</module>
+        <module>account-service</module>
+        <module>notification-service</module>
+    </modules>
+
+    <properties>
+        <java.version>21</java.version>
+        <spring.boot.version>3.3.4</spring.boot.version>
+    </properties>
+
+</project>
