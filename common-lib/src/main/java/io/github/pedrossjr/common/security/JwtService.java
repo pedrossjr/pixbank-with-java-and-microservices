@@ -1,4 +1,4 @@
-package io.github.pedrossjr.auth_service.security;
+package io.github.pedrossjr.common.security;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

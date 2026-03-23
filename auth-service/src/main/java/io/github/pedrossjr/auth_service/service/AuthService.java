@@ -2,7 +2,7 @@ package io.github.pedrossjr.auth_service.service;
 
 import io.github.pedrossjr.auth_service.entity.User;
 import io.github.pedrossjr.auth_service.repository.UserRepository;
-import io.github.pedrossjr.auth_service.security.JwtService;
+import io.github.pedrossjr.common.security.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class AuthService {
 
     private final UserRepository userRepository;
-    private final JwtService jwtService;
+    private final io.github.pedrossjr.common.security.JwtService jwtService;
     private final PasswordEncoder passwordEncoder;
 
     public String register(String username, String password) {
