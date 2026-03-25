@@ -9,6 +9,16 @@ services:
     ports:
       - "5432:5432"
 
+  payment-db:
+    image: postgres:18.3-alpine
+    container_name: payment-db
+    environment:
+      POSTGRES_DB: payment-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+
   pgadmin:
     image: dpage/pgadmin4:8.12
     container_name: pgadmin_payment
@@ -20,3 +30,18 @@ services:
       - "5050:80"
     depends_on:
       - auth-db
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092

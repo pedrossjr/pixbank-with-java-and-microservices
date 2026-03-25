@@ -29,6 +29,8 @@ public class JwtGatewayFilter implements GlobalFilter {
             .getHeaders()
             .getFirst("Authorization");
 
+        System.out.println("Authorization: " + authHeader);
+
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
             return exchange.getResponse().setComplete();

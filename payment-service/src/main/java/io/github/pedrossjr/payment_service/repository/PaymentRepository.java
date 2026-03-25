@@ -1,4 +1,7 @@
 package io.github.pedrossjr.payment_service.repository;
 
-public class PaymentRepository {
+import io.github.pedrossjr.payment_service.entity.Payment;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PaymentRepository extends JpaRepository<Payment, Long> {
 }
